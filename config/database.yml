@@ -1,0 +1,12 @@
+default: &default
+  adapter: <%= ENV['DB_ADAPTER'] ||= 'postgresql' %>
+  encoding: unicode
+  pool: 10
+
+development:
+  <<: *default
+  database: abca3_development
+
+test:
+  <<: *default
+  database: abca3_test
